@@ -14,10 +14,6 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            //string s = "x500:/o=ExchangeLabs/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=0df3fc9a0d7a4a3dafe5513d1b779b4c-Piyush.R;SIP:piyush.r@novelis.com;SMTP:piyush.r@novelis.adityabirla.com;smtp:piyush.r@novelis.com;smtp:RP2@novelis.com";
-            //string s = "x500:/o=ExchangeLabs/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7db27a2504774ad787f9793840e40f8a-SungMin.Park@novelis.com;smtp:SungMin.Park@novelis.com;SIP:SungMin.Park@novelis.com;SMTP:SungMin.Park@UlsanAluminum.com";
-            string s = "SMTP:SungMin.Park@UlsanAluminum.com;x500:/o=ExchangeLabs/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7db27a2504774ad787f9793840e40f8a-SungMin.Park@novelis.com;smtp:SungMin.Park@novelis.com;SIP:SungMin.Park@novelis.com";
-            Console.Write((s.Insert(s.Length, ";").Substring(s.Insert(s.Length, ";").IndexOf("SMTP") + 5)).Substring(0, s.Insert(s.Length, ";").Substring(s.Insert(s.Length, ";").IndexOf("SMTP") + 5).IndexOf(';')));
             //string siteURL = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence";
             //string domain = "Novelis"; string username = "AgilePoint_Qa"; string password = "Workflow$1";
 
@@ -111,15 +107,6 @@ namespace ConsoleApplication1
                         string location = destWeb.ServerRelativeUrl.TrimEnd('/') + file.ServerRelativeUrl.Replace(srcRelativeUrl, "").Replace(file.Name, "").TrimEnd('/');
                         FileInformation fileInfo = File.OpenBinaryDirect(srcContext, file.ServerRelativeUrl);
                         File.SaveBinaryDirect(destContext, location, fileInfo.Stream, true);
-
-                        //File file = srcContext.Web.GetFileByServerRelativeUrl(item.File.ServerRelativeUrl.ToString());
-                        //srcContext.Load(file);
-                        //srcContext.ExecuteQuery();
-                        //string location = destWeb.ServerRelativeUrl.TrimEnd('/') + file.ServerRelativeUrl.Replace(srcRelativeUrl, "").Replace(file.Name, "").TrimEnd('/');
-                        //FileInformation fileInfo = Microsoft.SharePoint.Client.File.OpenBinaryDirect(srcContext, file.ServerRelativeUrl);
-
-                        //File.SaveBinaryDirect(destContext, location, fileInfo.Stream, true);
-                        //destWeb.Context.ExecuteQuery();
                         break;
                 }
             }
