@@ -14,24 +14,23 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            //string siteURL = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence";
-            //string domain = "Novelis"; string username = "AgilePoint_Qa"; string password = "Workflow$1";
+            string siteURL = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence";
+            string domain = "Novelis"; string username = "AgilePoint_Qa"; string password = "Workflow$1";
 
-            //ClientContext context = new ClientContext(siteURL);
-            ////SecureString securepass = new SecureString();
+            ClientContext context = new ClientContext(siteURL);
+            //SecureString securepass = new SecureString();
             ////foreach (char c in password.ToCharArray()) securepass.AppendChar(c);
             ////context.Credentials = new SharePointOnlineCredentials(username, securepass);
 
-            //context.Credentials = new NetworkCredential(username, password, domain);
-            //string listName = "NominationSupportingMaterials2018";
+            context.Credentials = new NetworkCredential(username, password, domain);
+            string listName = "NominationSupportingMaterials2018";
             ////DeleteListItems(context, listName);
 
-            //string srcLibrary = "NominationSupportingMaterials";
-            //string destLibrary = "NominationSupportingMaterials2018";
-            //string srcUrl = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence";
-            //string destUrl = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence/Record 2018";
-            //CopyDocLibRecursively(srcLibrary, destLibrary, srcUrl, destUrl, domain, username, password);
-
+            string srcLibrary = "NominationSupportingMaterials";
+            string destLibrary = "NominationSupportingMaterials2018";
+            string srcUrl = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence";
+            string destUrl = "https://test-ap.insidenovelis.com/sites/AP/NovelisAwardsofExcellence/Record 2018";
+            CopyDocLibRecursively(srcLibrary, destLibrary, srcUrl, destUrl, domain, username, password);
             Console.ReadLine();
         }
 
