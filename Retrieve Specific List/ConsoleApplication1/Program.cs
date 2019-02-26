@@ -19,12 +19,12 @@ namespace ConsoleApplication1
 
             ClientContext context = new ClientContext(siteURL);
             //SecureString securepass = new SecureString();
-            ////foreach (char c in password.ToCharArray()) securepass.AppendChar(c);
-            ////context.Credentials = new SharePointOnlineCredentials(username, securepass);
+            //foreach (char c in password.ToCharArray()) securepass.AppendChar(c);
+            //context.Credentials = new SharePointOnlineCredentials(username, securepass);
 
             context.Credentials = new NetworkCredential(username, password, domain);
             string listName = "NominationSupportingMaterials2018";
-            ////DeleteListItems(context, listName);
+            DeleteListItems(context, listName);
 
             string srcLibrary = "NominationSupportingMaterials";
             string destLibrary = "NominationSupportingMaterials2018";
